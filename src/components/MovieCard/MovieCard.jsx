@@ -1,8 +1,14 @@
 import './MovieCard.scss';
 
 export const MovieCard = ({ movie, select }) =>
-  (movie.title.trim().toLocaleLowerCase().includes(select) ||
-    movie.description.trim().toLocaleLowerCase().includes(select)) && (
+  (movie.title
+    .trim()
+    .toLocaleLowerCase()
+    .includes(select.trim().toLocaleLowerCase()) ||
+    movie.description
+      .trim()
+      .toLocaleLowerCase()
+      .includes(select.trim().toLocaleLowerCase())) && (
     <div className="card">
       <div className="card-image">
         <figure className="image is-4by3">
